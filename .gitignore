@@ -1,0 +1,9 @@
+.idea/
+.python-version
+.venv/
+
+target/
+dbt_packages/
+logs/
+profiles.yml
+.user.yml

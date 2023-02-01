@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: names_copy
+    description: One record per id with first_name, last_name.
+    columns:
+      - name: id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: The first name.
+      - name: last_name
+        description: The last name.
+
+  - name: additional_data_copy
+    description: Additional data per id with mail and gender.
+    columns:
+      - name: id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: mail
+        description: mail-address
+      - name: gender
+        description: Freetext gender.
+
+  - name: additional_data_mapped
+    description: Gender mapped to Male/Female/Other.
+    columns:
+      - name: id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: mail
+        description: mail-address
+      - name: gender
+        description: Gender takes values "Male" / "Female" / "Other"
+        tests:
+          - accepted_values:
+              values: [ "Male", "Female", "Other"]
