@@ -1,7 +1,7 @@
-<profile-name>: # profile name
-  target: <target-name> # this is the default target
+analytics: # profile name
+  target: dwh_production # this is the default target
   outputs:
-    <target-name>:
+    dwh_production:
       type: <postgres | other> # the database type make sure you installed the corresponding adapter https://docs.getdbt.com/docs/supported-data-platforms
       host: [hostname]
       user: [username]
@@ -11,7 +11,5 @@
       schema: [dbt schema]
 
     <target-name>: # additional targets
-      ...
 
 <profile-name>: # additional profiles
-  ...

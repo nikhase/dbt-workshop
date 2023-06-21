@@ -1,9 +1,11 @@
 # dbt Demo Project
 
+Based on the dbt own [jaffle shop demo](https://github.com/dbt-labs/jaffle_shop)
+
 ## Requirement
 
 ### External
-In order to run the dbt demo we require a "running" SQL-DB. 
+In order to run the dbt demo we require a "running" SQL-DB.
 ```
 docker run --name some-postgres -e POSTGRES_PASSWORD=<secret> -e POSTGRES_USER=<user> -p 5432:5432 postgres
 ```
@@ -24,7 +26,7 @@ Plugins:
   - postgres: 1.0.0```
 ```
 
-Make sure you also installed the required [adapter for you database](https://docs.getdbt.com/docs/supported-data-platforms) 
+Make sure you also installed the required [adapter for you database](https://docs.getdbt.com/docs/supported-data-platforms)
 for the postgres.
 
 The DB connection has to be setup in a `profiles.yml` file which can be generated using the

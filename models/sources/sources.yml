@@ -1,0 +1,39 @@
+sources:
+  - name: raw
+    tables:
+      - name: raw_customers
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+          - name: first_name
+          - name: last_name
+
+      - name: raw_orders
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+          - name: user_id
+            tests:
+              - relationships:
+                  to: source('raw','raw_customers')
+                  field: id
+          - name: order_data
+          - name: status
+
+      - name: raw_payments
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+          - name: order_id
+            tests:
+              - relationships:
+                  to: source('raw','raw_orders')
+                  field: id
+          - name: payment_method
+          - name: amount

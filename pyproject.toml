@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "dbt-demo"
+version = "0.1.0"
+description = ""
+authors = ["Matthias Niehoff <matthias.niehoff@codecentric.de>"]
+readme = "README.md"
+packages = [{include = "dbt_demo"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+dbt-postgres = "^1.5.1"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.3.3"
+sqlfluff = "^2.1.1"
+sqlfluff-templater-dbt = "^2.1.1"
+ruff = "^0.0.274"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,8 @@
+# default config taken from https://docs.sqlfluff.com/en/stable/configuration.html
+[sqlfluff]
+templater = dbt
+dialect = postgres
+max_line_length = 120
+
+[sqlfluff:templater:jinja]
+apply_dbt_builtins = true
