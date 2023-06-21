@@ -1,0 +1,14 @@
+# templated profiles yaml for running dbt in automated fashion, e.g. in a docker container, triggered from airflow.
+# values must be available as environment variables
+dbt_demo:
+  target: postgres_dwh
+  outputs:
+    postgres_dwh:
+      type: postgres
+      host: "{{ env_var('DBT_DATABASE_HOST') }}"
+      user: "{{ env_var('DBT_DATABASE_USERNAME') }}"
+      password: "{{ env_var('DBT_DATABASE_PASSWORD') }}"
+      port: 5432
+      dbname: "{{ env_var('DBT_DATABASE_NAME','vap') }}"
+      schema: "{{ env_var('DBT_DATABASE_SCHEMA','analytics') }}"
+      threads: "{{ env_var('DBT_DATABASE_THREADS','4') | int }}"
