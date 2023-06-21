@@ -15,6 +15,8 @@ pre-commit = "^3.3.3"
 sqlfluff = "^2.1.1"
 sqlfluff-templater-dbt = "^2.1.1"
 ruff = "^0.0.274"
+elementary-data = "^0.8.2"
+data-diff = {version = "0.7.9", extras=["postgres"]}
 
 [build-system]
 requires = ["poetry-core"]
