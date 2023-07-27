@@ -35,8 +35,8 @@ models:
       schema: staging
 
   # elementary models
-  elementary:
-    +schema: 'elementary'
+#  elementary:
+#    +schema: 'elementary'
 
 seeds:
   +schema: seeds
