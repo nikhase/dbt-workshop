@@ -1,15 +1,18 @@
-analytics: # profile name
-  target: dwh_production # this is the default target
-  outputs:
-    dwh_production:
-      type: <postgres | other> # the database type make sure you installed the corresponding adapter https://docs.getdbt.com/docs/supported-data-platforms
-      host: [hostname]
-      user: [username]
-      password: [password]
-      port: [port]
-      dbname: [database name] # or database instead of dbname
-      schema: [dbt schema]
-
-    <target-name>: # additional targets
-
-<profile-name>: # additional profiles
+dbt_workshop: # profile name
+  target: dev # this is the default target
+  outputs: # this is the list of targets
+    dev:
+      type: bigquery
+      method: service-account
+      project: data2day-dbt-workshop
+      dataset: jaffle_shop # You can also use "schema" here
+      threads: 2
+      keyfile: [/path/to/bigquery/keyfile.json]
+    dev-postgres:
+      type: postgres
+      host: localhost
+      user: develop
+      password: develop
+      port: 5432
+      dbname: postgres
+      schema: analysis

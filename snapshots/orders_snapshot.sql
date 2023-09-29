@@ -9,5 +9,5 @@
     )
 }}
 
-select * from {{ source('raw', 'raw_orders') }}
+    select * from {{ source('raw', 'raw_orders') }}
 {% endsnapshot %}
