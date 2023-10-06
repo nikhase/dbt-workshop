@@ -17,7 +17,7 @@ sqlfluff = "^2.3"
 sqlfluff-templater-dbt = "^2.3"
 ruff = "^0.0.274"
 elementary-data = "^0.10"
-data-diff = {version = "0.8", extras=["postgres"]}
+data-diff = {version = "^0.8", extras=["postgres"]}
 
 [build-system]
 requires = ["poetry-core"]

@@ -4,6 +4,9 @@ sources:
   - name: raw
     tables:
       - name: raw_customers
+        tests:
+          - dbt_expectations.expect_table_row_count_to_be_between:
+                min_value: 30
         columns:
           - name: id
             tests:
@@ -39,3 +42,7 @@ sources:
                   field: id
           - name: payment_method
           - name: amount
+            tests:
+              - dbt_expectations.expect_column_max_to_be_between:
+                  min_value: 3000
+                  max_value: 4000

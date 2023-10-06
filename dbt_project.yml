@@ -33,10 +33,9 @@ models:
     +materialized: table
     staging:
       schema: staging
-
-  # elementary models
-#  elementary:
-#    +schema: 'elementary'
+    # elementary models
+  elementary:
+    +schema: 'elementary'
 
 seeds:
   +schema: seeds
@@ -44,5 +43,4 @@ seeds:
 vars:
   data_diff:
     prod_database: postgres
-    prod_schema: analytics
-    prod_custom_schema: analytics_<custom_schema>
+    prod_schema: analysis
